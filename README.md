@@ -16,8 +16,17 @@ Este projeto tem como objetivo ajudar no gerenciamento e controle das finanças 
     git clone https://github.com/seu-usuario/controle_de_financas.git
     ```
 2. Instale as dependências conforme instruções do projeto.
-3. Execute o sistema conforme documentação técnica.
-
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Antes precisa criar o banco de dados do projeto.
+    ```bash
+    python3 models.py
+    ```
+4. Execute o sistema para ver a interface no terminal. 
+    ```bash
+    python3 templetes.py
+    ```
 ## Tecnologias utilizadas
 
 - Python
