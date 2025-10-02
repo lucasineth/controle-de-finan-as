@@ -15,21 +15,30 @@ Este projeto tem como objetivo ajudar no gerenciamento e controle das finanças 
     ```bash
     git clone https://github.com/seu-usuario/controle_de_financas.git
     ```
-2. Instale as dependências conforme instruções do projeto.
+2. Instale as dependências:
     ```bash
     pip install -r requirements.txt
     ```
-3. Antes precisa criar o banco de dados do projeto.
+3. Execute o sistema:
     ```bash
-    python3 models.py
+    python main.py
     ```
-4. Execute o sistema para ver a interface no terminal. 
-    ```bash
-    python3 templetes.py
-    ```
+
+## Estrutura do Projeto
+
+- `app/models/`: modelos de dados, enums e engine do banco
+- `app/services/`: regras de negócio
+- `app/ui/`: interface CLI
+- `app/views/`: para futuras interfaces
+- `main.py`: ponto de entrada
+- `database.db`: banco SQLite
+- `requirements.txt`: dependências
+
 ## Tecnologias utilizadas
 
 - Python
+- SQLModel
+- Matplotlib
 - SQLite
 
 ## Contribuição

@@ -1,19 +1,8 @@
-from sqlmodel import SQLModel, Field, create_engine, Relationship
-from enum import Enum
+
+from sqlmodel import SQLModel, Field, Relationship
 from datetime import date
-
-class Bancos(Enum):
-    NUBANK = 'Nubank'
-    INTER = 'Inter'
-    PICPAY = 'Picpay'
-
-class Status(Enum):
-    ATIVO = 'Ativo'
-    INATIVO = 'Inativo'
-
-class Tipos(Enum):
-    ENTRADA = 'Entrada'
-    SAIDA = 'Saida'
+from app.models.enums import Bancos, Status, Tipos
+from app.models.database import engine
 
 class Conta(SQLModel, table=True):
     id: int = Field(primary_key=True)
@@ -29,14 +18,14 @@ class Historico(SQLModel, table=True):
     valor: float
     data: date
 
-sqlite_file_name = 'database.db'
-sqlite_url = f"sqlite:///{sqlite_file_name}"
-
-engine = create_engine(sqlite_url, echo=False)
-
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
 
+if __name__ == "__main__":
+    create_db_and_tables()
+
+def create_db_and_tables():
+    SQLModel.metadata.create_all(engine)
 
 if __name__ == "__main__":
     create_db_and_tables()
